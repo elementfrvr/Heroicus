@@ -1,0 +1,18 @@
+First sprint
+-Database (SQL)
+-UI (JavaFX)
+-Ability to add, modify, delete customers
+-Ability to create claims
+
+Second sprint
+-Ability to generate quotes
+-Search customers
+-Add policy expiration/renewal
+-Different types of policies(Auto, home, etc.)/Packages
+
+Eventual
+-Secure storage of data
+-Sales shit
+-Communication shit
+-Web app connectivity
+-
