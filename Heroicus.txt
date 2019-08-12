@@ -5,7 +5,7 @@ First sprint
 -Ability to create claims
 
 Second sprint
--Ability to generate quotes
+-Ability to generate quotes/ risk calculator
 -Search customers
 -Add policy expiration/renewal
 -Different types of policies(Auto, home, etc.)/Packages
