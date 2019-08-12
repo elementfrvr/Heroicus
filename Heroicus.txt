@@ -15,4 +15,3 @@ Eventual
 -Sales shit
 -Communication shit
 -Web app connectivity
--
