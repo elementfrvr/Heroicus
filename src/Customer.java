@@ -8,23 +8,58 @@ public class Customer {
     //Customer data
     private String lastName;
     private String firstName;
-    private Date policyStart;
-    private Date policyEnd;
-    private BigDecimal AmountOfCoverage;
-    private BigDecimal assetValue;
     private int customerAge;
-    private float assetRisk;
+    private Date customerSince;
+    private BigDecimal annualIncome;
+
 
     //Constructor
-    public Customer(String last, String first, Date start, Date end, BigDecimal coverage, BigDecimal value, int age, float risk){
+    public Customer(String last, String first, int age, Date since, BigDecimal income){
         lastName=last;
         firstName=first;
-        policyStart=start;
-        policyEnd=end;
-        AmountOfCoverage=coverage;
-        assetValue=value;
         customerAge=age;
-        assetRisk=risk;
+        customerSince=since;
+        annualIncome=income;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public int getCustomerAge() {
+        return customerAge;
+    }
+
+    public void setCustomerAge(int customerAge) {
+        this.customerAge = customerAge;
+    }
+
+    public Date getCustomerSince() {
+        return customerSince;
+    }
+
+    public void setCustomerSince(Date customerSince) {
+        this.customerSince = customerSince;
+    }
+
+    public BigDecimal getAnnualIncome() {
+        return annualIncome;
+    }
+
+    public void setAnnualIncome(BigDecimal annualIncome) {
+        this.annualIncome = annualIncome;
     }
 
     //TODO
