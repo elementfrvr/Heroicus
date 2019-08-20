@@ -12,16 +12,18 @@ public class Customer {
     private Date customerSince;
     private BigDecimal annualIncome;
     private String customerAddress;
+    private int numOfPolicies;
 
 
     //Constructor
-    public Customer(String last, String first, int age, Date since, BigDecimal income, String address){
+    public Customer(String last, String first, int age, Date since, BigDecimal income, String address, int policies){
         lastName=last;
         firstName=first;
         customerAge=age;
         customerSince=since;
         annualIncome=income;
         customerAddress=address;
+        numOfPolicies= policies;
     }
 
     public String getLastName() {
@@ -70,6 +72,14 @@ public class Customer {
 
     public void setCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
+    }
+
+    public int getNumOfPolicies() {
+        return numOfPolicies;
+    }
+
+    public void setNumOfPolicies(int numOfPolicies) {
+        this.numOfPolicies = numOfPolicies;
     }
 
     //TODO
