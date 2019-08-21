@@ -16,8 +16,12 @@ final class DBHandler {
     private static final String TABLE = "heroicus_test";
 
     //Constructor
-    //Creates Database connection on instantiation
+    //Calls DBStart on instantiation
     DBHandler() throws SQLException {
+        DBStart();
+    }
+
+    private void DBStart() throws SQLException {
         Connection con = DriverManager.getConnection(CONN + ":" + PORT + "/" + TABLE, USERNAME, PASSWORD);
         System.out.println("Connected");
     }
