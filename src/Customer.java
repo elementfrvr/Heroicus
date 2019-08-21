@@ -10,13 +10,13 @@ public class Customer {
     private String firstName;
     private int customerAge;
     private Date customerSince;
-    private BigDecimal annualIncome;
+    private int annualIncome;
     private String customerAddress;
     private int numOfPolicies;
 
 
     //Constructor
-    public Customer(String last, String first, int age, Date since, BigDecimal income, String address, int policies){
+    public Customer(String last, String first, int age, Date since, int income, String address, int policies){
         lastName=last;
         firstName=first;
         customerAge=age;
@@ -58,11 +58,11 @@ public class Customer {
         this.customerSince = customerSince;
     }
 
-    public BigDecimal getAnnualIncome() {
+    public int getAnnualIncome() {
         return annualIncome;
     }
 
-    public void setAnnualIncome(BigDecimal annualIncome) {
+    public void setAnnualIncome(int annualIncome) {
         this.annualIncome = annualIncome;
     }
 
