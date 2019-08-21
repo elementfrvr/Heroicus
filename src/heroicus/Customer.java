@@ -1,8 +1,6 @@
 /*This class will hold the new customer data prior to being added to the database
-*/
-
+ */
 package heroicus;
-
 import java.util.Date;
 
 class Customer {
@@ -15,16 +13,15 @@ class Customer {
     private String customerAddress;
     private int numOfPolicies;
 
-
     //Constructor
-    public Customer(String last, String first, int age, Date since, int income, String address, int policies){
-        lastName=last;
-        firstName=first;
-        customerAge=age;
-        customerSince=since;
-        annualIncome=income;
-        customerAddress=address;
-        numOfPolicies= policies;
+    public Customer(String last, String first, int age, Date since, int income, String address, int policies) {
+        lastName = last;
+        firstName = first;
+        customerAge = age;
+        customerSince = since;
+        annualIncome = income;
+        customerAddress = address;
+        numOfPolicies = policies;
     }
 
     //Getters and Setters

@@ -1,7 +1,6 @@
 /*This class acts as a generic policy to be inherited by specific (Home, auto, etc.) policy types
-*/
+ */
 package heroicus;
-
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -15,14 +14,14 @@ class Policy {
     private float assetRisk;
 
     //constructor
-    public Policy(String type, String desc, Date start, Date end, BigDecimal coverage, BigDecimal value, float risk){
-        policyType=type;
-        assetDescription=desc;
-        policyStart=start;
-        policyEnd=end;
-        AmountOfCoverage=coverage;
-        assetValue=value;
-        assetRisk=risk;
+    public Policy(String type, String desc, Date start, Date end, BigDecimal coverage, BigDecimal value, float risk) {
+        policyType = type;
+        assetDescription = desc;
+        policyStart = start;
+        policyEnd = end;
+        AmountOfCoverage = coverage;
+        assetValue = value;
+        assetRisk = risk;
     }
 
     //Getters and Setters
