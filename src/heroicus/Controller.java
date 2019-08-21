@@ -1,0 +1,4 @@
+package heroicus;
+
+class Controller {
+}

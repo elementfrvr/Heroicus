@@ -1,9 +1,11 @@
-package UI;
+/*This class acts as a generic policy to be inherited by specific (Home, auto, etc.) policy types
+*/
+package heroicus;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Policy {
+class Policy {
     private String policyType;
     private String assetDescription;
     private Date policyStart;
@@ -23,6 +25,7 @@ public class Policy {
         assetRisk=risk;
     }
 
+    //Getters and Setters
     public String getPolicyType() {
         return policyType;
     }

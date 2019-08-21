@@ -1,10 +1,12 @@
-package UI;/*This class will hold the new customer data prior to being added to the database
+/*This class will hold the new customer data prior to being added to the database
 */
+
+package heroicus;
 
 import java.util.Date;
 
-public class Customer {
-    //UI.Customer data
+class Customer {
+    //Customer data
     private String lastName;
     private String firstName;
     private int customerAge;
@@ -25,6 +27,7 @@ public class Customer {
         numOfPolicies= policies;
     }
 
+    //Getters and Setters
     public String getLastName() {
         return lastName;
     }
@@ -81,10 +84,5 @@ public class Customer {
         this.numOfPolicies = numOfPolicies;
     }
 
-    //TODO
-    //Create function for customer to be added to database
-    public void addToDatabase(){
-
-    }
 
 }
