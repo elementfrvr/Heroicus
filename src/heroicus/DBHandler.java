@@ -12,6 +12,7 @@ final class DBHandler {
     //FOR TESTING ONLY
     private static final String USERNAME = "dbuser";
     private static final String PASSWORD ="dbuser";
+    //Database address info
     private static final String CONN = "jdbc:mysql://localhost";
     private static final String PORT ="3307";
     private static final String TABLE = "heroicus_test";
