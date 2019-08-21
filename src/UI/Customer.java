@@ -1,10 +1,10 @@
-/*This class will hold the new customer data prior to being added to the database
+package UI;/*This class will hold the new customer data prior to being added to the database
 */
 
 import java.util.Date;
 
 public class Customer {
-    //Customer data
+    //UI.Customer data
     private String lastName;
     private String firstName;
     private int customerAge;

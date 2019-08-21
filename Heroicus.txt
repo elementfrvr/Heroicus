@@ -18,7 +18,7 @@ Eventual
 
 Notes
 -Table for customers, and each policy type, linked via indexes
--Customer has policies, policy count, and customer data(age, time with company, etc.)
+-UI.Customer has policies, policy count, and customer data(age, time with company, etc.)
 -Policies have asset info,expiration/renewal dates, etc.
--Customer page has add policy button, claim button
--Policy type classes inherited from generic policy class, which includes String policy type(or int, ex. 1= auto, 2=home, etc.)
+-UI.Customer page has add policy button, claim button
+-UI.Policy type classes inherited from generic policy class, which includes String policy type(or int, ex. 1= auto, 2=home, etc.)

@@ -51,7 +51,7 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="581.0" prefWidth="982.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button layoutX="548.0" layoutY="14.0" mnemonicParsing="false" text="Add New Customer" AnchorPane.rightAnchor="20.0" />
+            <Button layoutX="548.0" layoutY="14.0" mnemonicParsing="false" text="Add New UI.Customer" AnchorPane.rightAnchor="20.0" />
       </children>
     </AnchorPane>
   </children>
