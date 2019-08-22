@@ -23,10 +23,18 @@ final class DBHandler {
 
     }
 
-    void DBStart(String userName, String password) throws SQLException {
+    boolean DBStart(String userName, String password) throws SQLException {
         USERNAME = userName;
         PASSWORD = password;
-        Connection con = DriverManager.getConnection(DRIVER + ADDRESS + ":" + PORT + "/" + TABLE, USERNAME, PASSWORD);
-        System.out.println("Connected");
+        try {
+            Connection con = DriverManager.getConnection(DRIVER + ADDRESS + ":" + PORT + "/" + TABLE, USERNAME, PASSWORD);
+            System.out.println("Connected");
+            return true;
+        }
+        catch(SQLException e){
+            return false;
+
+        }
+
     }
 }
