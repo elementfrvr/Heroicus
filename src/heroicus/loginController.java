@@ -24,19 +24,22 @@ public class loginController {
     private PasswordField txtPassword;
 
     @FXML
-    private void logIn() throws SQLException {
-        if (connected!=true) {
+    private void logIn() {
+        if (!connected) {
             DBHandler database = new DBHandler();
             if (database.DBStart(txtUsername.getText(), txtPassword.getText())) {
                 lblFeedback.setText("Connected");
                 connected = true;
-            } else
+            }
+            else {
                 lblFeedback.setText("Invalid Username or Password");
-            database.DBStart(txtUsername.getText(), txtPassword.getText());
+                System.out.println("Login Failed");
+            }
         }
-        else
+        else if (connected= true) {
             lblFeedback.setText("Already Connected");
             System.out.println("Already Connected");
+        }
     }
 
 }

@@ -19,11 +19,11 @@ final class DBHandler {
     private String PASSWORD;
 
     //Constructor
-    DBHandler() throws SQLException {
+    DBHandler() {
 
     }
 
-    boolean DBStart(String userName, String password) throws SQLException {
+    boolean DBStart(String userName, String password){
         USERNAME = userName;
         PASSWORD = password;
         try {
@@ -33,7 +33,6 @@ final class DBHandler {
         }
         catch(SQLException e){
             return false;
-
         }
 
     }
