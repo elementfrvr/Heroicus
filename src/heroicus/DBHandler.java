@@ -11,7 +11,7 @@ final class DBHandler {
     private static final String USERNAME = "dbuser";
     private static final String PASSWORD = "dbuser";
     //Database address info
-    private static final String CONN = "jdbc:mysql://";
+    private static final String DRIVER = "jdbc:mysql://";
     private static final String ADDRESS ="localhost";
     private static final String PORT = "3307";
     private static final String TABLE = "heroicus_test";
@@ -23,7 +23,7 @@ final class DBHandler {
     }
 
     private void DBStart() throws SQLException {
-        Connection con = DriverManager.getConnection(CONN + ADDRESS + ":" + PORT + "/" + TABLE, USERNAME, PASSWORD);
+        Connection con = DriverManager.getConnection(DRIVER + ADDRESS + ":" + PORT + "/" + TABLE, USERNAME, PASSWORD);
         System.out.println("Connected");
     }
 }
