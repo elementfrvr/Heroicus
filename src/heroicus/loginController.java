@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
         import javafx.scene.control.PasswordField;
         import javafx.scene.control.TextField;
 
+import java.sql.SQLException;
+
 public class loginController {
 
     @FXML
@@ -21,5 +23,11 @@ public class loginController {
 
     @FXML
     private PasswordField txtPassword;
+
+    @FXML
+    private void logIn() throws SQLException {
+        DBHandler database = new DBHandler();
+        database.DBStart(txtUsername.getText(), txtPassword.getText());
+    }
 
 }
