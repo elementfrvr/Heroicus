@@ -25,6 +25,7 @@ public class loginController {
 
     @FXML
     private void logIn() {
+        //TODO SqlTimeout exception. Change boolean DBStart to int, add try catch for exception
         if (!connected) {
             DBHandler database = new DBHandler();
             if (database.DBStart(txtUsername.getText(), txtPassword.getText())) {
