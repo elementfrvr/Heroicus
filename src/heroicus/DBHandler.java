@@ -1,6 +1,11 @@
 /*This class connects to the database upon object creation. It also contains the database related methods
  */
 package heroicus;
+import com.mysql.cj.jdbc.MysqlDataSource;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -27,7 +32,13 @@ final class DBHandler {
         USERNAME = userName;
         PASSWORD = password;
         try {
-            Connection con = DriverManager.getConnection(DRIVER + ADDRESS + ":" + PORT + "/" + TABLE, USERNAME, PASSWORD);
+            //Connection con = DriverManager.getConnection(DRIVER + ADDRESS + ":" + PORT + "/" + TABLE, USERNAME, PASSWORD);
+            MysqlDataSource dataSource = new MysqlDataSource();
+            dataSource.setUser(USERNAME);
+            dataSource.setPassword(PASSWORD);
+            dataSource.setUrl(DRIVER+ADDRESS+ ":" + PORT);
+            dataSource.setDatabaseName("heroicus_test");
+            Connection conn = (Connection) dataSource.getConnection();
             System.out.println("Connected");
             return true;
         }
