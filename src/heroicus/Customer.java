@@ -1,6 +1,7 @@
 /*This class will hold the new customer data prior to being added to the database
  */
 package heroicus;
+
 import java.util.Date;
 
 class Customer {

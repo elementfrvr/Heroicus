@@ -15,7 +15,7 @@ final class DBHandler {
      */
     //Database address info
     private static final String DRIVER = "jdbc:mysql://";
-    private static final String ADDRESS ="localhost";
+    private static final String ADDRESS = "localhost";
     private static final String PORT = "3307";
     private static final String TABLE = "heroicus_test";
     private final MysqlDataSource dataSource = new MysqlDataSource();
@@ -25,7 +25,7 @@ final class DBHandler {
 
     }
 
-    boolean DBStart(String USERNAME, String PASSWORD){
+    boolean DBStart(String USERNAME, String PASSWORD) {
         try {
             /* OLD DriverManager implementation of connection
             //Connection conn = DriverManager.getConnection(DRIVER + ADDRESS + ":" + PORT + "/" + TABLE, USERNAME, PASSWORD);
@@ -33,13 +33,12 @@ final class DBHandler {
             //New implementation using DataSource
             dataSource.setUser(USERNAME);
             dataSource.setPassword(PASSWORD);
-            dataSource.setUrl(DRIVER+ADDRESS+ ":" + PORT);
+            dataSource.setUrl(DRIVER + ADDRESS + ":" + PORT);
             dataSource.setDatabaseName(TABLE);
             Connection conn = dataSource.getConnection();
             System.out.println("Connected");
             return true;
-        }
-        catch(SQLException e){
+        } catch (SQLException e) {
             return false;
         }
 

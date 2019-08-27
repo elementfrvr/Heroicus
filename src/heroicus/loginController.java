@@ -1,5 +1,5 @@
 /*UI controller class
-*/
+ */
 package heroicus;
 
 import javafx.fxml.FXML;
@@ -26,13 +26,11 @@ public class loginController {
             if (database.DBStart(txtUsername.getText(), txtPassword.getText())) {
                 lblFeedback.setText("Connected");
                 connected = true;
-            }
-            else {
+            } else {
                 lblFeedback.setText("Invalid Username or Password");
                 System.out.println("Login Failed");
             }
-        }
-        else if (connected= true) {
+        } else if (connected = true) {
             lblFeedback.setText("Already Connected");
             System.out.println("Already Connected");
         }

@@ -1,6 +1,7 @@
 /*This class acts as a generic policy to be inherited by specific (Home, auto, etc.) policy types
  */
 package heroicus;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
