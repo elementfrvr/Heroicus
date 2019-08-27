@@ -18,7 +18,7 @@ final class DBHandler {
     private static final String ADDRESS ="localhost";
     private static final String PORT = "3307";
     private static final String TABLE = "heroicus_test";
-    private MysqlDataSource dataSource = new MysqlDataSource();
+    private final MysqlDataSource dataSource = new MysqlDataSource();
 
     //Constructor
     DBHandler() {
