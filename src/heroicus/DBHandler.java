@@ -20,20 +20,19 @@ final class DBHandler {
     private static final String ADDRESS ="localhost";
     private static final String PORT = "3307";
     private static final String TABLE = "heroicus_test";
-    private String USERNAME;
-    private String PASSWORD;
+    private MysqlDataSource dataSource = new MysqlDataSource();
 
     //Constructor
     DBHandler() {
 
     }
 
-    boolean DBStart(String userName, String password){
-        USERNAME = userName;
-        PASSWORD = password;
+    boolean DBStart(String USERNAME, String PASSWORD){
         try {
-            //Connection con = DriverManager.getConnection(DRIVER + ADDRESS + ":" + PORT + "/" + TABLE, USERNAME, PASSWORD);
-            MysqlDataSource dataSource = new MysqlDataSource();
+            /* DriverManager implementation of connection
+            //Connection conn = DriverManager.getConnection(DRIVER + ADDRESS + ":" + PORT + "/" + TABLE, USERNAME, PASSWORD);
+             */
+            //New implementation using DataSource
             dataSource.setUser(USERNAME);
             dataSource.setPassword(PASSWORD);
             dataSource.setUrl(DRIVER+ADDRESS+ ":" + PORT);
