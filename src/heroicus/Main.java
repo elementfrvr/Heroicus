@@ -18,7 +18,7 @@ public class Main extends Application {
         primaryStage.setMaximized(true);
     }
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         launch(args);
 
     }
