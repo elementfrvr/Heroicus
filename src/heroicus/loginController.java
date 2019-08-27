@@ -3,19 +3,15 @@
 package heroicus;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import java.sql.SQLException;
 
 public class loginController {
     private Boolean connected = false;
     @FXML
     private TextField txtUsername;
 
-    @FXML
-    private Button btnLogin;
 
     @FXML
     private Label lblFeedback;
@@ -25,7 +21,6 @@ public class loginController {
 
     @FXML
     private void logIn() {
-        //TODO SqlTimeout exception. Change boolean DBStart to int, add try catch for exception
         if (!connected) {
             DBHandler database = new DBHandler();
             if (database.DBStart(txtUsername.getText(), txtPassword.getText())) {

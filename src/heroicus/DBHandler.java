@@ -8,10 +8,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 final class DBHandler {
-    //Database login
+    /*Database login
     //FOR TESTING ONLY
     //private static final String USERNAME = "dbuser";
     //private static final String PASSWORD = "dbuser";
+     */
     //Database address info
     private static final String DRIVER = "jdbc:mysql://";
     private static final String ADDRESS ="localhost";
