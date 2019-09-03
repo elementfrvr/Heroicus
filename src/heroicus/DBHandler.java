@@ -38,7 +38,13 @@ final class DBHandler {
             dataSource.setDatabaseName(TABLE);
             Connection conn = dataSource.getConnection();
             System.out.println("Connected");
+
+
+            //TEST NEW CUSTOMER CALL
+            //REMOVE WHEN FINISHED
             newCustomer("Bob", 22, 365, "123 Forest ST" );
+
+
             return true;
         } catch (SQLException e) {
             return false;
