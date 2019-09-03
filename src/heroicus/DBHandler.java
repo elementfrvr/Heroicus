@@ -16,7 +16,7 @@ final class DBHandler {
     //Database address info
     private static final String DRIVER = "jdbc:mysql://";
     private static final String ADDRESS = "localhost";
-    private static final String PORT = "3307";
+    private static final String PORT = "3306";
     private static final String TABLE = "heroicus_test";
     private final MysqlDataSource dataSource = new MysqlDataSource();
 
