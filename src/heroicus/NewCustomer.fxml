@@ -16,7 +16,7 @@
             <TextField id="txtCustName" fx:id="txtCustName" layoutX="221.0" layoutY="87.0" />
             <Label layoutX="71.0" layoutY="87.0" text="Customer name:" />
             <Label layoutX="77.0" layoutY="150.0" text="Customer Age:" />
-            <Button id="btnLogin" fx:id="btnLogin" defaultButton="true" layoutX="299.0" layoutY="324.0" mnemonicParsing="false" onAction="#logIn" text="Login" />
+            <Button id="btnConfirm" fx:id="btnConfirm" defaultButton="true" layoutX="276.0" layoutY="322.0" mnemonicParsing="false" text="Confirm" />
             <Label id="lblFeedback" fx:id="lblFeedback" layoutX="316.0" layoutY="276.0" textAlignment="CENTER" />
             <Label layoutX="65.0" layoutY="213.0" text="Customer Income:" />
             <Label layoutX="62.0" layoutY="269.0" text="Customer Address:" />
