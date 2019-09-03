@@ -6,6 +6,7 @@ import com.mysql.cj.jdbc.MysqlDataSource;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 final class DBHandler {
     /*Database login
@@ -37,10 +38,20 @@ final class DBHandler {
             dataSource.setDatabaseName(TABLE);
             Connection conn = dataSource.getConnection();
             System.out.println("Connected");
+            newCustomer("Bob", 22, 365, "123 Forest ST" );
             return true;
         } catch (SQLException e) {
             return false;
         }
+    }
 
+    void newCustomer(String custName, int custAge, int custIncome, String custAddress) throws SQLException {
+        long millis = System.currentTimeMillis();
+        java.sql.Date custSince = new java.sql.Date(millis);
+        Connection conn = dataSource.getConnection();
+        Statement stmt = conn.createStatement();
+        String customer = "INSERT INTO customers VALUES(" + custName + ", " + custAge + ", " + custSince + ", " +
+                + custIncome + ", " + custAddress + ")";
+        stmt.executeUpdate(customer);
     }
 }
