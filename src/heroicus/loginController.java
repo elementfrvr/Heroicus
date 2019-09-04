@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import java.sql.SQLException;
+
 public class loginController {
     private Boolean connected = false;
     @FXML
@@ -20,7 +22,7 @@ public class loginController {
     private PasswordField txtPassword;
 
     @FXML
-    private void logIn() {
+    private void logIn() throws SQLException {
         if (!connected) {
             DBHandler database = new DBHandler();
             if (database.DBStart(txtUsername.getText(), txtPassword.getText())) {
