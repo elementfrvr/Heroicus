@@ -39,8 +39,8 @@ final class DBHandler {
 
             //TEST NEW CUSTOMER CALL
             //REMOVE WHEN FINISHED
-            //newCustomer("Bob", 22, 365, "123 Forest ST" );
-            newCustomer();
+            newCustomer("Frankie", 25, 9000, "123 Forestery ST" );
+            //newCustomer();
             return true;
         }
         catch (SQLException e) {
@@ -48,16 +48,15 @@ final class DBHandler {
         }
    }
 
-    void newCustomer(/*String custName, int custAge, int custIncome, String custAddress*/) throws SQLException {
-        //long millis = System.currentTimeMillis();
-        //java.sql.Date custSince = new java.sql.Date(millis);
-        //conn = dataSource.getConnection();
+    void newCustomer(String custName, int custAge, int custIncome, String custAddress) throws SQLException {
+        long millis = System.currentTimeMillis();
+        java.sql.Date custSince = new java.sql.Date(millis);
         Statement stmt = conn.createStatement();
-        /*
-        String customer = "INSERT INTO customers VALUES(" + custName + ", " + custAge + ", " + custSince + ", " +
-                + custIncome + ", " + custAddress + ")";
-         */
-        String customer = "INSERT INTO customers VALUES('jeff', 23, null, 365, 'Fake')";
+
+        String customer = "INSERT INTO customers VALUES(" + "'" +custName + "'" + ", " + custAge + ", " + "'" + custSince + "'" + ", " +
+                + custIncome + ", " + "'" + custAddress + "'" + ")";
+
+        //String customer = "INSERT INTO customers VALUES('jeff', 23, null, 365, 'Fake')";
         System.out.println(stmt.executeUpdate(customer));
 
         /*PreparedStatement pstmt = conn.prepareStatement("INSERT INTO customers VALUES(?, ?, ?, ?, ?)");
