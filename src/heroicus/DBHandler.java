@@ -27,20 +27,17 @@ final class DBHandler {
 
     boolean DBStart(String USERNAME, String PASSWORD) throws SQLException {
         try {
-            /* OLD DriverManager implementation of connection
-            //Connection conn = DriverManager.getConnection(DRIVER + ADDRESS + ":" + PORT + "/" + TABLE, USERNAME, PASSWORD);
-             */
-            //New implementation using DataSource
+            //Sets Variables for datasource
             source.setUser(USERNAME);
             source.setPassword(PASSWORD);
             source.setUrl(DRIVER + ADDRESS + ":" + PORT+ "/" + DATABASE);
+            //Generates connection for login
             conn = source.getConnection();
             System.out.println("Connected");
 
             //TEST NEW CUSTOMER CALL
             //REMOVE WHEN FINISHED
-            newCustomer("Frankie", 25, 9000, "123 Forestery ST" );
-            //newCustomer();
+            newCustomer("Frank Lee", 2, 900, "123 Fort ST" );
             return true;
         }
         catch (SQLException e) {
@@ -49,25 +46,20 @@ final class DBHandler {
    }
 
     void newCustomer(String custName, int custAge, int custIncome, String custAddress) throws SQLException {
+        conn = source.getConnection();
+        //Get current date as SQL date
         long millis = System.currentTimeMillis();
         java.sql.Date custSince = new java.sql.Date(millis);
-        Statement stmt = conn.createStatement();
 
-        String customer = "INSERT INTO customers VALUES(" + "'" +custName + "'" + ", " + custAge + ", " + "'" + custSince + "'" + ", " +
-                + custIncome + ", " + "'" + custAddress + "'" + ")";
-
-        //String customer = "INSERT INTO customers VALUES('jeff', 23, null, 365, 'Fake')";
-        System.out.println(stmt.executeUpdate(customer));
-
-        /*PreparedStatement pstmt = conn.prepareStatement("INSERT INTO customers VALUES(?, ?, ?, ?, ?)");
-        pstmt.setString(1, "Bob");
-        pstmt.setInt(2, 23);
-        pstmt.setNull(3, Types.DATE);
-        pstmt.setInt(4, 365);
-        pstmt.setString(5, "123 Sesame Street");
-        boolean i = pstmt.execute();
+        //Prepared Statement
+        PreparedStatement pstmt = conn.prepareStatement("INSERT INTO customers VALUES(?, ?, ?, ?, ?)");
+        pstmt.setString(1, custName);
+        pstmt.setInt(2, custAge);
+        pstmt.setDate(3, custSince);
+        pstmt.setInt(4, custIncome);
+        pstmt.setString(5, custAddress);
+        //Execute Update
+        int i = pstmt.executeUpdate();
         System.out.println(i);
-
-         */
     }
 }
