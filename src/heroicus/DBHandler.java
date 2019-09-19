@@ -26,7 +26,7 @@ final class DBHandler {
     }
 
     boolean DBStart(String USERNAME, String PASSWORD) throws SQLException {
-        //try {
+        try {
             /* OLD DriverManager implementation of connection
             //Connection conn = DriverManager.getConnection(DRIVER + ADDRESS + ":" + PORT + "/" + TABLE, USERNAME, PASSWORD);
              */
@@ -34,24 +34,19 @@ final class DBHandler {
             source.setUser(USERNAME);
             source.setPassword(PASSWORD);
             source.setUrl(DRIVER + ADDRESS + ":" + PORT+ "/" + DATABASE);
-            //source.setUrl(DRIVER);
-            //source.setPortNumber(3306);
-            //source.setDatabaseName(DATABASE);
             conn = source.getConnection();
             System.out.println("Connected");
-
 
             //TEST NEW CUSTOMER CALL
             //REMOVE WHEN FINISHED
             //newCustomer("Bob", 22, 365, "123 Forest ST" );
             newCustomer();
-
             return true;
         }
-        /*catch (SQLException e) {
+        catch (SQLException e) {
             return false;
-        }*/
-   // }
+        }
+   }
 
     void newCustomer(/*String custName, int custAge, int custIncome, String custAddress*/) throws SQLException {
         //long millis = System.currentTimeMillis();
