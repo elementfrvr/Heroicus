@@ -11,11 +11,10 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         primaryStage.setTitle("Heroicus Agent Management");
+        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
-        primaryStage.setMaximized(true);
     }
 
     public static void main(String[] args) {

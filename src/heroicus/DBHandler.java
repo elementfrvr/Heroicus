@@ -17,33 +17,28 @@ final class DBHandler {
     private static final String ADDRESS = "localhost";
     private static final String PORT = "3306";
     private static final String DATABASE = "heroicus_test";
-    private MysqlDataSource source = new MysqlDataSource();
-    Connection conn = null;
+    private final MysqlDataSource source = new MysqlDataSource();
+    private Connection conn = null;
 
     //Constructor
     DBHandler() {
 
     }
 
-    boolean DBStart(String USERNAME, String PASSWORD) throws SQLException {
+    boolean DBStart(String USERNAME, String PASSWORD) {
         try {
             //Sets Variables for datasource
             source.setUser(USERNAME);
             source.setPassword(PASSWORD);
-            source.setUrl(DRIVER + ADDRESS + ":" + PORT+ "/" + DATABASE);
+            source.setUrl(DRIVER + ADDRESS + ":" + PORT + "/" + DATABASE);
             //Generates connection for login
             conn = source.getConnection();
             System.out.println("Connected");
-
-            //TEST NEW CUSTOMER CALL
-            //REMOVE WHEN FINISHED
-            newCustomer("Frank Lee", 2, 900, "123 Fort ST" );
             return true;
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             return false;
         }
-   }
+    }
 
     void newCustomer(String custName, int custAge, int custIncome, String custAddress) throws SQLException {
         conn = source.getConnection();
@@ -58,6 +53,7 @@ final class DBHandler {
         pstmt.setDate(3, custSince);
         pstmt.setInt(4, custIncome);
         pstmt.setString(5, custAddress);
+
         //Execute Update
         int i = pstmt.executeUpdate();
         System.out.println(i);
