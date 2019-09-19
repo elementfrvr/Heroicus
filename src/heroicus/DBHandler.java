@@ -18,7 +18,7 @@ final class DBHandler {
     private static final String ADDRESS = "localhost";
     private static final String PORT = "3306";
     private static final String TABLE = "heroicus_test";
-    private final MysqlDataSource dataSource = new MysqlDataSource();
+    private MysqlDataSource dataSource = new MysqlDataSource();
     Connection conn = null;
 
     //Constructor
@@ -43,16 +43,8 @@ final class DBHandler {
             //TEST NEW CUSTOMER CALL
             //REMOVE WHEN FINISHED
             //newCustomer("Bob", 22, 365, "123 Forest ST" );
-            //newCustomer();
-            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO customers VALUES(?, ?, ?, ?, ?)");
-            pstmt.setString(1, "Bob");
-            pstmt.setInt(2, 23);
-            pstmt.setNull(3, Types.DATE);
-            pstmt.setInt(4, 365);
-            pstmt.setString(5, "123 Sesame Street");
-            //String customer = "INSERT INTO 'customers' VALUES('jeff', 23, null, 365, 'Fake')";
-            int i =pstmt.executeUpdate();
-            System.out.println(i);
+            newCustomer();
+
             return true;
         }
         /*catch (SQLException e) {
@@ -61,15 +53,24 @@ final class DBHandler {
    // }
 
     void newCustomer(/*String custName, int custAge, int custIncome, String custAddress*/) throws SQLException {
-        long millis = System.currentTimeMillis();
-        java.sql.Date custSince = new java.sql.Date(millis);
-        Connection conn = dataSource.getConnection();
-        Statement stmt = conn.createStatement();
+        //long millis = System.currentTimeMillis();
+        //java.sql.Date custSince = new java.sql.Date(millis);
+        //conn = dataSource.getConnection();
+        //Statement stmt = conn.createStatement();
         /*
         String customer = "INSERT INTO customers VALUES(" + custName + ", " + custAge + ", " + custSince + ", " +
                 + custIncome + ", " + custAddress + ")";
          */
-        String customer = "INSERT INTO customers VALUES('jeff', 23, null, 365, 'Fake')";
-        System.out.println(stmt.executeUpdate(customer));
+        //String customer = "INSERT INTO customers VALUES('jeff', 23, null, 365, 'Fake')";
+        //System.out.println(stmt.executeUpdate(customer));
+
+        PreparedStatement pstmt = conn.prepareStatement("INSERT INTO customers VALUES(?, ?, ?, ?, ?)");
+        pstmt.setString(1, "Bob");
+        pstmt.setInt(2, 23);
+        pstmt.setNull(3, Types.DATE);
+        pstmt.setInt(4, 365);
+        pstmt.setString(5, "123 Sesame Street");
+        boolean i = pstmt.execute();
+        System.out.println(i);
     }
 }
