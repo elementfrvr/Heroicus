@@ -5,7 +5,6 @@ package heroicus;
 import com.mysql.cj.jdbc.MysqlDataSource;
 
 import java.sql.*;
-import java.sql.Types;
 
 final class DBHandler {
     /*Database login
@@ -17,8 +16,8 @@ final class DBHandler {
     private static final String DRIVER = "jdbc:mysql://";
     private static final String ADDRESS = "localhost";
     private static final String PORT = "3306";
-    private static final String TABLE = "heroicus_test";
-    private MysqlDataSource dataSource = new MysqlDataSource();
+    private static final String DATABASE = "heroicus_test";
+    private MysqlDataSource source = new MysqlDataSource();
     Connection conn = null;
 
     //Constructor
@@ -32,11 +31,13 @@ final class DBHandler {
             //Connection conn = DriverManager.getConnection(DRIVER + ADDRESS + ":" + PORT + "/" + TABLE, USERNAME, PASSWORD);
              */
             //New implementation using DataSource
-            dataSource.setUser(USERNAME);
-            dataSource.setPassword(PASSWORD);
-            dataSource.setUrl(DRIVER + ADDRESS + ":" + PORT);
-            dataSource.setDatabaseName(TABLE);
-            conn = dataSource.getConnection();
+            source.setUser(USERNAME);
+            source.setPassword(PASSWORD);
+            source.setUrl(DRIVER + ADDRESS + ":" + PORT+ "/" + DATABASE);
+            //source.setUrl(DRIVER);
+            //source.setPortNumber(3306);
+            //source.setDatabaseName(DATABASE);
+            conn = source.getConnection();
             System.out.println("Connected");
 
 
@@ -56,15 +57,15 @@ final class DBHandler {
         //long millis = System.currentTimeMillis();
         //java.sql.Date custSince = new java.sql.Date(millis);
         //conn = dataSource.getConnection();
-        //Statement stmt = conn.createStatement();
+        Statement stmt = conn.createStatement();
         /*
         String customer = "INSERT INTO customers VALUES(" + custName + ", " + custAge + ", " + custSince + ", " +
                 + custIncome + ", " + custAddress + ")";
          */
-        //String customer = "INSERT INTO customers VALUES('jeff', 23, null, 365, 'Fake')";
-        //System.out.println(stmt.executeUpdate(customer));
+        String customer = "INSERT INTO customers VALUES('jeff', 23, null, 365, 'Fake')";
+        System.out.println(stmt.executeUpdate(customer));
 
-        PreparedStatement pstmt = conn.prepareStatement("INSERT INTO customers VALUES(?, ?, ?, ?, ?)");
+        /*PreparedStatement pstmt = conn.prepareStatement("INSERT INTO customers VALUES(?, ?, ?, ?, ?)");
         pstmt.setString(1, "Bob");
         pstmt.setInt(2, 23);
         pstmt.setNull(3, Types.DATE);
@@ -72,5 +73,7 @@ final class DBHandler {
         pstmt.setString(5, "123 Sesame Street");
         boolean i = pstmt.execute();
         System.out.println(i);
+
+         */
     }
 }
