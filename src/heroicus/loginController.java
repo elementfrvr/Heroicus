@@ -28,8 +28,7 @@ public class loginController {
     @FXML
     private void logIn() throws SQLException, IOException {
         if (!connected) {
-            DBHandler database = new DBHandler();
-            if (database.DBStart(txtUsername.getText(), txtPassword.getText())) {
+            if (DBHandler.getInstance().DBStart(txtUsername.getText(), txtPassword.getText())) {
                 lblFeedback.setText("Connected");
                 connected = true;
                 //Loads New Scene upon login

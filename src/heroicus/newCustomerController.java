@@ -22,4 +22,10 @@ public class newCustomerController {
     @FXML
     private Button btnConfirm;
 
+    @FXML
+    private void enter(){
+        
+    }
+
+
 }

@@ -20,9 +20,18 @@ final class DBHandler {
     private final MysqlDataSource source = new MysqlDataSource();
     private Connection conn = null;
 
-    //Constructor
-    DBHandler() {
+    private static DBHandler singleton;
 
+    //Constructor
+    private DBHandler() {
+
+    }
+
+    public static DBHandler getInstance()
+    {
+        if (singleton==null)
+            singleton = new DBHandler();
+        return singleton;
     }
 
     boolean DBStart(String USERNAME, String PASSWORD) {
