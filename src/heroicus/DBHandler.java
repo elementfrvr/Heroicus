@@ -68,10 +68,7 @@ final class DBHandler {
         //Execute Update
         int i = pstmt.executeUpdate();
         System.out.println(i);
-        if(i==1)
-            return true;
-        else
-            return false;
+        return i == 1;
     }
 
     //Function to check if string contains an integer number

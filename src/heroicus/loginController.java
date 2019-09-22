@@ -26,7 +26,7 @@ public class loginController {
     private PasswordField txtPassword;
 
     @FXML
-    private void logIn() throws SQLException, IOException {
+    private void logIn() throws IOException {
         if (!connected) {
             if (DBHandler.getInstance().DBStart(txtUsername.getText(), txtPassword.getText())) {
                 lblFeedback.setText("Connected");
