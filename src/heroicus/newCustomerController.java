@@ -29,16 +29,17 @@ public class newCustomerController {
 
 
     @FXML
-    //TODO Error handling
     private void enter() throws SQLException {
-        if (DBHandler.getInstance().newCustomer(txtCustName.getText(), Integer.parseInt(txtCustAge.getText()), Integer.parseInt(txtCustIncome.getText()), txtCustAddress.getText())) {
-            System.out.println("Customer Added.");
-            lblFeedback.setText("Customer added.");
+        if (DBHandler.getInstance().intCheck(txtCustAge.getText())&& DBHandler.getInstance().intCheck(txtCustIncome.getText())){
+            if (DBHandler.getInstance().newCustomer(txtCustName.getText(), Integer.parseInt(txtCustAge.getText()), Integer.parseInt(txtCustIncome.getText()), txtCustAddress.getText())) {
+                System.out.println("Customer Added.");
+                lblFeedback.setText("Customer added.");
+            } else {
+                lblFeedback.setText("Customer not added. Please review customer details.");
+                System.out.println("Customer failure.");
+            }
         }
         else
-            lblFeedback.setText("Customer not added. Please review customer details.");
-
+            lblFeedback.setText("Customer not added. Please ensure that both customer age and income are entered as integers.");
     }
-
-
 }

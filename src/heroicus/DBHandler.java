@@ -66,6 +66,17 @@ final class DBHandler {
         //Execute Update
         int i = pstmt.executeUpdate();
         System.out.println(i);
+        if(i==1)
+            return true;
+        else
+            return false;
+    }
+    public boolean intCheck(String val){
+        try{
+            Integer.parseInt(val);
+        }catch(Exception ex ){
+            return false;
+        }
         return true;
     }
 }
