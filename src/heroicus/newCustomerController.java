@@ -27,10 +27,17 @@ public class newCustomerController {
     @FXML
     private Button btnConfirm;
 
+
     @FXML
     //TODO Error handling
     private void enter() throws SQLException {
-        DBHandler.getInstance().newCustomer(txtCustName.getText(), Integer.parseInt(txtCustAge.getText()), Integer.parseInt(txtCustIncome.getText()), txtCustAddress.getText());
+        if (DBHandler.getInstance().newCustomer(txtCustName.getText(), Integer.parseInt(txtCustAge.getText()), Integer.parseInt(txtCustIncome.getText()), txtCustAddress.getText())) {
+            System.out.println("Customer Added.");
+            lblFeedback.setText("Customer added.");
+        }
+        else
+            lblFeedback.setText("Customer not added. Please review customer details.");
+
     }
 
 

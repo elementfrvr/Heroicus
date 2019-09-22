@@ -49,7 +49,7 @@ final class DBHandler {
         }
     }
 
-    void newCustomer(String custName, int custAge, int custIncome, String custAddress) throws SQLException {
+    Boolean newCustomer(String custName, int custAge, int custIncome, String custAddress) throws SQLException {
         conn = source.getConnection();
         //Get current date as SQL date
         long millis = System.currentTimeMillis();
@@ -66,5 +66,6 @@ final class DBHandler {
         //Execute Update
         int i = pstmt.executeUpdate();
         System.out.println(i);
+        return true;
     }
 }
