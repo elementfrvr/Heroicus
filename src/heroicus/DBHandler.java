@@ -44,7 +44,9 @@ final class DBHandler {
             conn = source.getConnection();
             System.out.println("Connected");
             return true;
-        } catch (SQLException e) {
+        }
+        //Returns false for failed connection to database
+        catch (SQLException ex) {
             return false;
         }
     }
@@ -55,7 +57,7 @@ final class DBHandler {
         long millis = System.currentTimeMillis();
         java.sql.Date custSince = new java.sql.Date(millis);
 
-        //Prepared Statement
+        //Prepared Statement creation
         PreparedStatement pstmt = conn.prepareStatement("INSERT INTO customers VALUES(?, ?, ?, ?, ?)");
         pstmt.setString(1, custName);
         pstmt.setInt(2, custAge);
@@ -71,10 +73,13 @@ final class DBHandler {
         else
             return false;
     }
+
+    //Function to check if string contains an integer number
     public boolean intCheck(String val){
         try{
             Integer.parseInt(val);
-        }catch(Exception ex ){
+        }
+        catch(Exception ex ){
             return false;
         }
         return true;
