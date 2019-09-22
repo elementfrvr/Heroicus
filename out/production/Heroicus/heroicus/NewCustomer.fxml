@@ -2,9 +2,12 @@
 
 <!--suppress ALL -->
 
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="heroicus.newCustomerController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="581.0" prefWidth="982.0" VBox.vgrow="ALWAYS">
@@ -13,13 +16,13 @@
             <TextField id="txtCustName" fx:id="txtCustName" layoutX="221.0" layoutY="87.0" />
             <Label layoutX="71.0" layoutY="87.0" text="Customer name:" />
             <Label layoutX="77.0" layoutY="150.0" text="Customer Age:" />
-            <Button id="btnConfirm" fx:id="btnConfirm" defaultButton="true" layoutX="276.0" layoutY="322.0" mnemonicParsing="false" text="Confirm" />
+            <Button id="btnConfirm" fx:id="btnConfirm" defaultButton="true" layoutX="276.0" layoutY="322.0" mnemonicParsing="false" onAction="#enter" text="Confirm" />
             <Label id="lblFeedback" fx:id="lblFeedback" layoutX="316.0" layoutY="276.0" textAlignment="CENTER" />
             <Label layoutX="65.0" layoutY="213.0" text="Customer Income:" />
             <Label layoutX="62.0" layoutY="269.0" text="Customer Address:" />
             <TextField id="txtCustIncome" fx:id="txtCustIncome" layoutX="222.0" layoutY="207.0" />
-            <TextField id="txtCustAge" fx:id="txtCustIncome" layoutX="222.0" layoutY="144.0" />
             <TextField id="txtCustAddress" fx:id="txtCustAddress" layoutX="222.0" layoutY="263.0" />
+            <TextField id="txtCustAge" fx:id="txtCustAge" layoutX="221.0" layoutY="144.0" />
          </children>
     </AnchorPane>
   </children>

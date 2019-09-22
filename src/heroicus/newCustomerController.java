@@ -5,6 +5,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.sql.SQLException;
+
 public class newCustomerController {
 
     @FXML
@@ -17,14 +19,18 @@ public class newCustomerController {
     private TextField txtCustAddress;
 
     @FXML
+    private TextField txtCustAge;
+
+    @FXML
     private Label lblFeedback;
 
     @FXML
     private Button btnConfirm;
 
     @FXML
-    private void enter(){
-        
+    //TODO Error handling
+    private void enter() throws SQLException {
+        DBHandler.getInstance().newCustomer(txtCustName.getText(), Integer.parseInt(txtCustAge.getText()), Integer.parseInt(txtCustIncome.getText()), txtCustAddress.getText());
     }
 
 
