@@ -31,7 +31,7 @@ public class loginController {
                 lblFeedback.setText("Connected");
                 connected = true;
                 //Loads New Scene upon login
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("NewCustomer.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
                 Stage stage = (Stage) txtPassword.getScene().getWindow();
                 Scene scene = new Scene(loader.load());
                 stage.setScene(scene);

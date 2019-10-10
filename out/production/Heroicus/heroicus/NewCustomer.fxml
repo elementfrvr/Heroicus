@@ -2,10 +2,11 @@
 
 <!--suppress ALL -->
 
-<?import javafx.scene.*?>
 <?import java.lang.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
