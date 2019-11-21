@@ -70,6 +70,12 @@ final class DBHandler {
         System.out.println(i);
         return i == 1;
     }
+    //Function to retrieve list of customers
+    public void listCustomers() throws SQLException {
+        conn = source.getConnection();
+
+
+    }
 
     //Function to check if string contains an integer number
     public boolean intCheck(String val){

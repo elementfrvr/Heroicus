@@ -21,4 +21,5 @@ public class mainMenuController {
         Scene scene = new Scene(loader.load());
         stage.setScene(scene);
     }
+    
 }
