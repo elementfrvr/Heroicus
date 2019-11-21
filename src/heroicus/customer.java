@@ -4,7 +4,7 @@ package heroicus;
 
 import java.util.Date;
 
-class Customer {
+class customer {
     //Customer data
     private String lastName;
     private String firstName;
@@ -15,7 +15,7 @@ class Customer {
     private int numOfPolicies;
 
     //Constructor
-    public Customer(String last, String first, int age, Date since, int income, String address, int policies) {
+    public customer(String last, String first, int age, Date since, int income, String address, int policies) {
         lastName = last;
         firstName = first;
         customerAge = age;
