@@ -21,5 +21,22 @@ public class mainMenuController {
         Scene scene = new Scene(loader.load());
         stage.setScene(scene);
     }
-    
+
+    @FXML
+    private void listCustomer() throws IOException {
+        //Loads NewCustomer Scene
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ListCustomer.fxml"));
+        Stage stage = (Stage) lblGreeting.getScene().getWindow();
+        Scene scene = new Scene(loader.load());
+        stage.setScene(scene);
+    }
+
+    @FXML
+    private void searchCustomer() throws IOException {
+        //Loads NewCustomer Scene
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("SearchCustomer.fxml"));
+        Stage stage = (Stage) lblGreeting.getScene().getWindow();
+        Scene scene = new Scene(loader.load());
+        stage.setScene(scene);
+    }
 }

@@ -77,6 +77,13 @@ final class DBHandler {
 
     }
 
+    //Function to search for customers
+    public void searchCustomers() throws SQLException{
+        conn= source.getConnection();
+
+
+    }
+
     //Function to check if string contains an integer number
     public boolean intCheck(String val){
         try{

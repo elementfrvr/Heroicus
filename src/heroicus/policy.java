@@ -5,7 +5,7 @@ package heroicus;
 import java.math.BigDecimal;
 import java.util.Date;
 
-class Policy {
+class policy {
     private String policyType;
     private String assetDescription;
     private Date policyStart;
@@ -15,7 +15,7 @@ class Policy {
     private float assetRisk;
 
     //constructor
-    public Policy(String type, String desc, Date start, Date end, BigDecimal coverage, BigDecimal value, float risk) {
+    public policy(String type, String desc, Date start, Date end, BigDecimal coverage, BigDecimal value, float risk) {
         policyType = type;
         assetDescription = desc;
         policyStart = start;

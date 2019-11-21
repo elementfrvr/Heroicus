@@ -14,6 +14,8 @@
          <children>
             <Label id="lblGreeting" fx:id="lblGreeting" layoutX="112.0" layoutY="34.0" text="Please select the function you would like to perform:" />
             <Button id="btnNewCust" fx:id="btnNewCust" layoutX="224.0" layoutY="89.0" mnemonicParsing="false" onAction="#newCustomer" text="Create new customer" />
+            <Button id="btnList" fx:id="btnList" layoutX="244.0" layoutY="181.0" mnemonicParsing="false" onAction="#listCustomer" text="View Customers" />
+            <Button id="btnSearch" fx:id="btnSearch" layoutX="220.0" layoutY="269.0" mnemonicParsing="false" onAction="#searchCustomer" text="Search for a Customer" />
          </children></AnchorPane>
   </children>
 </VBox>
