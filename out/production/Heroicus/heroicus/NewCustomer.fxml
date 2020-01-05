@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="441.0" prefWidth="623.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="heroicus.newCustomerController">
+<VBox prefHeight="440.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="heroicus.newCustomerController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="581.0" prefWidth="982.0" VBox.vgrow="ALWAYS">
+    <AnchorPane id="btnReturn" maxHeight="-1.0" maxWidth="-1.0" prefHeight="581.0" prefWidth="982.0" VBox.vgrow="ALWAYS">
          <children>
             <Label layoutX="196.0" layoutY="34.0" text="Please enter new customer details:" />
             <TextField id="txtCustName" fx:id="txtCustName" layoutX="221.0" layoutY="87.0">
@@ -29,6 +29,7 @@
             <TextField id="txtCustAddress" fx:id="txtCustAddress" layoutX="222.0" layoutY="263.0" />
             <Button id="btnConfirm" fx:id="btnConfirm" defaultButton="true" layoutX="276.0" layoutY="322.0" mnemonicParsing="false" onAction="#enter" text="Confirm" />
             <Label id="lblFeedback" fx:id="lblFeedback" alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="59.0" layoutY="373.0" lineSpacing="1.0" prefHeight="96.0" prefWidth="538.0" textAlignment="CENTER" wrapText="true" />
+            <Button fx:id="btnReturn" layoutX="20.0" layoutY="15.0" mnemonicParsing="false" text="Main Menu" />
          </children>
     </AnchorPane>
   </children>
